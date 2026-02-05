@@ -10,7 +10,26 @@ To install the plugin, run:
 cordova plugin add cordova-plugin-cleanup
 ```
 
-## Configuration
+## OutSystems Configuration
+
+In your OutSystems mobile application0s `extensibility configuration`, add a preference to specify the paths of files to delete:
+```json
+{
+    "preferences": {
+        "global": [
+            {
+                "name": "CLEANUP_PATHS",
+                "value": "platforms/ios/www/file1.json,platforms/android/www/file1.json,platforms/android/www/test-json,platforms/ios/www/test-json"
+            }
+        ]
+    }
+}
+```
+- Paths are relative to the project root.
+- Separate multiple paths with commas.
+- Can include both files and directories.
+
+## Cordova Configuration
 
 In your Cordova project's `config.xml`, add a preference to specify the paths of files to delete:
 
