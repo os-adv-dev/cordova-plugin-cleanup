@@ -12,7 +12,7 @@ cordova plugin add cordova-plugin-cleanup
 
 ## OutSystems Configuration
 
-In your OutSystems mobile application0s `extensibility configuration`, add a preference to specify the paths of files to delete:
+In your end-user OutSystems mobile module's `extensibility configuration`, add a preference to specify the paths of files to delete:
 ```json
 {
     "preferences": {
