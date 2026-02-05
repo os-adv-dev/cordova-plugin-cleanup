@@ -4,7 +4,12 @@ module.exports = function(context) {
     var fs = require('fs');
     var path = require('path');
 
-    var pathsStr = context.opts.preferences['CLEANUP_PATHS'];
+    const projectRoot = context.opts.projectRoot;
+    const { ConfigParser } = require("cordova-common");
+
+    const config = new ConfigParser(path.join(projectRoot, "config.xml"));
+    const pathsStr = config.getPreference("CLEANUP_PATHS");
+
     if (pathsStr) {
         var paths = pathsStr.split(',').map(function(p) { return p.trim(); });
         paths.forEach(function(filePath) {
