@@ -4,7 +4,7 @@ module.exports = function(context) {
     var fs = require('fs');
     var path = require('path');
 
-    var pathsStr = context.opts.plugin.preferences['CLEANUP_PATHS'];
+    var pathsStr = context.opts.preferences['CLEANUP_PATHS'];
     if (pathsStr) {
         var paths = pathsStr.split(',').map(function(p) { return p.trim(); });
         paths.forEach(function(filePath) {
